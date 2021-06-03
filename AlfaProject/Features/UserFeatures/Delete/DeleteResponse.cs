@@ -1,7 +1,5 @@
 ﻿namespace AlfaProject.Features.UserFeatures.Delete
 {
-    public class DeleteResponse
-    {
-        
-    }
+    public record DeleteResponse(string Message);
+
 }

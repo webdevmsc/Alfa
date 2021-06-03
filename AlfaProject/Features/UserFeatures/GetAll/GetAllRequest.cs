@@ -1,6 +1,8 @@
-﻿namespace AlfaProject.Features.UserFeatures.GetAll
+﻿using MediatR;
+
+namespace AlfaProject.Features.UserFeatures.GetAll
 {
-    public class GetAllRequest
+    public class GetAllRequest : IRequest<GetAllResponse>
     {
         
     }

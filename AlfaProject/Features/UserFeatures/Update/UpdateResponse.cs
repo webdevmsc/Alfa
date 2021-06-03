@@ -1,7 +1,6 @@
-﻿namespace AlfaProject.Features.UserFeatures.Update
+﻿using AlfaProject.Models;
+
+namespace AlfaProject.Features.UserFeatures.Update
 {
-    public class UpdateResponse
-    {
-        
-    }
+    public record UpdateResponse(User UpdatedUser);
 }

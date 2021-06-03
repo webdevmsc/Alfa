@@ -9,10 +9,9 @@ namespace AlfaProject.Repositories
 {
     public interface IUserRepository : IRepository
     {
-        Task<string> Insert(User model);
-        Task<int> Delete(string id);
-        Task<int> Update(User model);
-        Task<User> GetById(string id);
-        Task<IEnumerable<User>> GetAll();
+        void Insert(User model);
+        void Update(User model);
+        User GetById(string id);
+        IEnumerable<User> GetAll();
     }
 }

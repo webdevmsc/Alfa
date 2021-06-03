@@ -1,5 +1,7 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
+using AlfaProject.Models;
 using AlfaProject.Repositories;
 using MediatR;
 
@@ -16,7 +18,8 @@ namespace AlfaProject.Features.UserFeatures.Create
         
         public Task<CreateResponse> Handle(CreateRequest request, CancellationToken cancellationToken)
         {
-            _userRepository.Insert(request);
+            var user = new User(request.FullNameValue, request.Login);
+            return Task.FromResult(new CreateResponse(user.Id, user.CreatedAt));
         }
     }
 }
