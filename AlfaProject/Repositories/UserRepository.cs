@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using AlfaProject.Extensions;
 using AlfaProject.Models;
 using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
 
 namespace AlfaProject.Repositories
 {
@@ -37,7 +36,7 @@ namespace AlfaProject.Repositories
             return connection;
         }
 
-        public void Insert(User user)
+        public void Create(User user)
         {
             using var connection = GetDbConnection();
             
@@ -51,7 +50,7 @@ namespace AlfaProject.Repositories
             cmd.Parameters.Add(new SQLiteParameter("@login", user.Login));
             cmd.Parameters.Add(new SQLiteParameter("@isDeleted", user.IsDeleted));
             cmd.Parameters.Add(new SQLiteParameter("@createdAt", user.CreatedAt.ValueInt));
-            cmd.Parameters.Add(new SQLiteParameter("@updatedAt", user.UpdatedAt.ValueInt));
+            cmd.Parameters.Add(new SQLiteParameter("@updatedAt", user.CreatedAt.ValueInt));
             
             cmd.ExecuteNonQuery();
         }

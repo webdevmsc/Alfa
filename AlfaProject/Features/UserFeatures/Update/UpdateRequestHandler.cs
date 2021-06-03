@@ -7,7 +7,7 @@ namespace AlfaProject.Features.UserFeatures.Update
 {
     public class UpdateRequestHandler : IRequestHandler<UpdateRequest, UpdateResponse>
     {
-        private IUserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
 
         public UpdateRequestHandler(IUserRepository userRepository)
         {

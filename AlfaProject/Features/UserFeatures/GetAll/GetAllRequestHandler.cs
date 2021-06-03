@@ -7,7 +7,7 @@ namespace AlfaProject.Features.UserFeatures.GetAll
 {
     public class GetAllRequestHandler : IRequestHandler<GetAllRequest, GetAllResponse>
     {
-        private IUserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
 
         public GetAllRequestHandler(IUserRepository userRepository)
         {

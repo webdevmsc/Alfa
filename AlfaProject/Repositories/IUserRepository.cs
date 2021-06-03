@@ -9,7 +9,7 @@ namespace AlfaProject.Repositories
 {
     public interface IUserRepository : IRepository
     {
-        void Insert(User model);
+        void Create(User model);
         void Update(User model);
         User GetById(string id);
         IEnumerable<User> GetAll();

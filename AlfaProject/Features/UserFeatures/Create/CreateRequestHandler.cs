@@ -9,7 +9,7 @@ namespace AlfaProject.Features.UserFeatures.Create
 {
     public class CreateRequestHandler : IRequestHandler<CreateRequest, CreateResponse>
     {
-        private IUserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
         
         public CreateRequestHandler(IUserRepository userRepository)
         {
@@ -19,6 +19,7 @@ namespace AlfaProject.Features.UserFeatures.Create
         public Task<CreateResponse> Handle(CreateRequest request, CancellationToken cancellationToken)
         {
             var user = new User(request.FullNameValue, request.Login);
+            _userRepository.Create(user);
             return Task.FromResult(new CreateResponse(user.Id, user.CreatedAt));
         }
     }

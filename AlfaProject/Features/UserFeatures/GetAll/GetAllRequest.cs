@@ -2,8 +2,5 @@
 
 namespace AlfaProject.Features.UserFeatures.GetAll
 {
-    public class GetAllRequest : IRequest<GetAllResponse>
-    {
-        
-    }
+    public record GetAllRequest : IRequest<GetAllResponse>;
 }
