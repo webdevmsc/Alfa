@@ -35,6 +35,7 @@ namespace AlfaProject
                     .WithScopedLifetime());
             services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
             services.AddControllers();
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "AlfaProject", Version = "v1"});
@@ -54,7 +55,7 @@ namespace AlfaProject
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });

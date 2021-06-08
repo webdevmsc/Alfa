@@ -86,7 +86,7 @@ namespace AlfaProject.Repositories
             return null;
         }
 
-        public IEnumerable<User> GetAll()
+        public List<User> GetAll()
         {
             var users = new List<User>();
             using var connection = GetDbConnection();
@@ -96,7 +96,8 @@ namespace AlfaProject.Repositories
             {
                 users.Add(reader.GetUser());
             }
-            return users.AsEnumerable();
+
+            return users.OrderByDescending(x => x.CreatedAt.Value).ToList();
         }
     }
 }

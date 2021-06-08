@@ -20,7 +20,7 @@ namespace AlfaProject.Features.UserFeatures.Create
         {
             var user = new User(request.FullNameValue, request.Login);
             _userRepository.Create(user);
-            return Task.FromResult(new CreateResponse(user.Id, user.CreatedAt));
+            return Task.FromResult(new CreateResponse(user));
         }
     }
 }

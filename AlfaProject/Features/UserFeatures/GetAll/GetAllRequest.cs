@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AlfaProject.Models;
+using MediatR;
 
 namespace AlfaProject.Features.UserFeatures.GetAll
 {

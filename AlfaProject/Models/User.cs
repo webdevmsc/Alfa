@@ -8,11 +8,12 @@ namespace AlfaProject.Models
     public record User(string Id, bool IsDeleted, FullNameValue FullName, string Login, DateTimeConvertibleValue CreatedAt, DateTimeConvertibleValue UpdatedAt)
     {
         public User(FullNameValue fullName, string login) : this(Guid.NewGuid().ToString(), false, fullName, login, DateTimeConvertibleValue.GetForNow, DateTimeConvertibleValue.GetForNow) { }
-
+        
         public User ContinueWithNewFullNameAndLogin(FullNameValue fullName, string login)
         {
             return this with { FullName = fullName, Login = login, UpdatedAt = DateTimeConvertibleValue.GetForNow };
         }
+        
         public User ContinueWithIsDeleted(bool isDeleted)
         {
             return this with {IsDeleted = isDeleted};

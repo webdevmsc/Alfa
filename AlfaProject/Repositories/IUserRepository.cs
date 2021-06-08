@@ -12,6 +12,6 @@ namespace AlfaProject.Repositories
         void Create(User model);
         void Update(User model);
         User GetById(string id);
-        IEnumerable<User> GetAll();
+        List<User> GetAll();
     }
 }
