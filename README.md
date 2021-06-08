@@ -26,7 +26,7 @@ Features - в этой папке хранятся "фичи" - действия
 
 • Не хватает валидации на стороне сервера 
 
-webdevmsc.github.com/alfa-client - код front-end проекта. Написан на React с использованием библиотеки Material UI
+https://github.com/webdevmsc/alfa-client - код front-end проекта. Написан на React с использованием библиотеки Material UI
 
 
 
